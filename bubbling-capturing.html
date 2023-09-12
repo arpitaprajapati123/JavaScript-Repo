@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="home-page">Home</a>
+        <button>Click on it</button>
+    </div>
+</body>
+<script>
+    var divEle = document.querySelector('div');
+    divEle.addEventListener('click', ()=>{         
+        console.log("div")
+    })
+    var button = document.querySelector('button')
+    button.addEventListener('click',(event)=>{
+        event.stopPropagation();
+        console.log("button")
+    })
+
+    var a = document.querySelector('a');
+
+    button.addEventListener('click', (event)=>{
+        event.stopImmediatePropagation()
+        console.log("button2")
+    })
+    button.addEventListener('click', (event)=>{
+        event.stopImmediatePropagation()
+        console.log("button3")
+    })
+    a.addEventListener('click', (event)=>{
+        event.preventDefault()
+    })
+</script>
+</html>

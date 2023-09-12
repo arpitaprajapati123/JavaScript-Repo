@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Btn1</button>
+    <button id="dltBtn-1">Btn2</button>
+    <button>Btn3</button>
+    <button>Btn4</button>
+    <button>Btn5</button>
+    <script>
+        let btn = document.getElementById("dltBtn-1");
+        btn.addEventListener('click', ()=>{
+            btn.style.display='none';
+            console.log('event triggered!')
+        })
+    </script>
+</body>
+</html>
