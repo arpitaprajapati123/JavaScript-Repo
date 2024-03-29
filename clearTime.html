@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h6>Clear Timeout and ClearTime Interval</h6>
+    <p id="para"></p>
+    <button onclick="setTimeRef=setTimeFunc()">set tim out</button>
+    <button onclick="clearTimeout(setTimeRef)">clear set  time out</button>
+
+    <button onclick="setTimeIntRef=setTimeIntFunc()">set time Interval</button>
+    <button onclick="clearInterval(setTimeIntRef)">clearTime Interval</button>
+
+    <button id="btn">event occur</button>
+
+    <script>
+        const paraRef = document.getElementById("para")
+        setTimeFunc=()=>{
+            setTimeout(()=>{
+                console.log("set time out function")
+            }, 2000)
+        }
+        setTimeIntFunc=()=>{
+            paraRef.innerHTML = "Loading... "
+            let num = 0;
+            setInterval(()=>{
+                num += 1;
+                paraRef.innerHTML = num;
+            }, 1000)
+        }
+        const onBtn = document.getElementById("btn");
+        onBtn.addEventListener('click', ()=>{
+            console.log("event triggered on button click!!")
+        })
+    </script>
+</body>
+</html>
